@@ -260,7 +260,7 @@ static int load_totp_seed(struct opt_cred *cred, char **seed_base64,
 
 	CKINT(read_complete(fd, seed, len));
 
-	while (isspace(seed[len - 1]))
+	while (isspace((unsigned char)seed[len - 1]))
 		len--;
 
 	logger(LOGGER_DEBUG, LOGGER_C_ANY,

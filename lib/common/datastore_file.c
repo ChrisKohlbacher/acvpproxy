@@ -1571,7 +1571,7 @@ static int acvp_datastore_file_find_responses(
 			continue;
 
 		for (i = 0; i < strlen(dirent->d_name); i++) {
-			if (!isdigit(dirent->d_name[i])) {
+			if (!isdigit((unsigned char)dirent->d_name[i])) {
 				skip = 1;
 				break;
 			}

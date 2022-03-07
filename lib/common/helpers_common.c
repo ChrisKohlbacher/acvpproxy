@@ -37,7 +37,7 @@ int acvp_req_check_string(char *string, size_t slen)
 		return 0;
 
 	while (slen) {
-		if (!isalnum(*string) && *string != '_' && *string != '-' &&
+		if (!isalnum((unsigned char)*string) && *string != '_' && *string != '-' &&
 		    *string != '/' && *string != '.')
 			*string = '_';
 
@@ -57,7 +57,7 @@ int acvp_req_check_filename(char *string, size_t slen)
 		return 0;
 
 	while (slen) {
-		if (!isalnum(*string) && *string != '_' && *string != '-' &&
+		if (!isalnum((unsigned char)*string) && *string != '_' && *string != '-' &&
 		    *string != '.')
 			*string = '_';
 

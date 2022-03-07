@@ -77,7 +77,7 @@ int acvp_sanitize_string(char *string)
 	slen = strlen(string);
 
 	while (slen) {
-		if (!isalnum(*string) && *string != '_' && *string != '-')
+		if (!isalnum((unsigned char)*string) && *string != '_' && *string != '-')
 			*string = '_';
 
 		string++;
